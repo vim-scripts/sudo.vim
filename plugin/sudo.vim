@@ -6,20 +6,31 @@
 "	edit one file with root privleges without running the whole 
 "	session that way.
 "
+"
 "	Usage:  put it in the plugin directory, and
-"		(command line): vim sudo:/etc/passwd
-"		(within vim):   :e sudo:/etc/passwd
+"			(command line): vim sudo:/etc/passwd
+"			(within vim):   :e sudo:/etc/passwd
 "
-"	sudo will ask for your password if need be.
-"
-"
+"		sudo will ask for your password if need be.
+"	Requires:
+"		sudo package installed
+"		decent OS (sorry, no windows, unless cygwin has sudo now?)
+"	Provides:
+"		URL handler, sudo: scheme
+"		2 autocommands
+"		
+"	Commands:
+"		SudoRead
+"		SudoWrite
+"	ToDo:
+"		Allow one to sudo to users other than root.
+"		Quote the file name better.
 "
 
 
 if exists("s:seen") && !exists("s:debug")
 	finish
 endif
-echo 'hi'
 let s:seen=1
 "let s:debug=1
 function! SudoRead(url)
