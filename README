@@ -1,0 +1,15 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=729
+
+"   sudo.vim:  A vim plugin by Rich Paul (vim@rich-paul.net)
+"
+"   This script eases use of vim with sudo by adding the ability to
+"   edit one file with root privleges without running the whole
+"   session that way.
+"
+"   Usage:  put it in the plugin directory, and
+"       (command line): vim sudo:/etc/passwd
+"       (within vim):   :e sudo:/etc/passwd
+"
+"   sudo will ask for your password if need be.
+"
+
