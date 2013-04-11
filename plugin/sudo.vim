@@ -61,7 +61,7 @@ function! SudoWrite (url) abort
 		let file=strpart(file,strlen(prot)+1)
 	endif
 	set nomod
-	exec '%write !sudo tee >/dev/null "'.file.'"'
+	:silent exec '%write !sudo tee >/dev/null "'.file.'"'
 endf
 command! -nargs=1 SudoRead call SudoRead(<f-args>)
 command! -nargs=1 SudoWrite call SudoWrite(<f-args>)
